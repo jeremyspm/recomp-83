@@ -189,6 +189,14 @@ function SettingsBody({ onClose, onReset }: { onClose: () => void; onReset: () =
       </section>
 
       <section className="space-y-2">
+        <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">On your phone</h3>
+        <p className="text-xs leading-snug text-slate-400">
+          iPhone: in Safari tap <b className="text-slate-200">Share → Add to Home Screen</b>. Android: browser menu <b className="text-slate-200">⋮ → Install app</b>.
+          It then opens full screen and works offline. Data lives on the device you log on, and on iPhone the home-screen app keeps its own copy separate from Safari, so log from one place.
+        </p>
+      </section>
+
+      <section className="space-y-2">
         <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">Backup</h3>
         <p className="text-xs text-slate-400">Everything is stored in this browser only. Export now and then, and before clearing browser data or switching phones.</p>
         <div className="grid grid-cols-2 gap-2">

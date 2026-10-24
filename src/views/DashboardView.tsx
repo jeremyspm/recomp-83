@@ -2,6 +2,7 @@ import { ChevronRight, Dumbbell, LineChart, ListChecks, Utensils } from 'lucide-
 import { useMemo, useState } from 'react'
 import { AlertList } from '../components/AlertList.tsx'
 import { CompositionGauge } from '../components/CompositionGauge.tsx'
+import { InstallHint } from '../components/InstallHint.tsx'
 import { SafetyCard } from '../components/SafetyCard.tsx'
 import { Button, Card, Chip, ProgressBar, SectionTitle, Segmented, Stat } from '../components/ui.tsx'
 import { WeighInCard } from '../components/WeighInCard.tsx'
@@ -63,6 +64,7 @@ export function DashboardView({ go }: { go: (t: TabId) => void }) {
 
   return (
     <div className="space-y-4">
+      <InstallHint />
       <SafetyCard />
       <AlertList alerts={alerts} />
 

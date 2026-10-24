@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { App } from './App.tsx'
 import { localISO } from './lib/dates.ts'
+import { isStandalone } from './lib/device.ts'
 import { demoState } from './lib/demo.ts'
 import { readSaved } from './lib/persist.ts'
 import { RestTimerProvider } from './state/RestTimerProvider.tsx'
@@ -25,3 +26,13 @@ createRoot(root).render(
     </StoreProvider>
   </StrictMode>,
 )
+
+// Offline support (public/sw.js). Production only, so dev never serves stale files.
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {})
+  })
+}
+// Installed apps ask the browser not to evict their data under storage pressure.
+// Only when installed: some browsers show a permission prompt for this in a plain tab.
+if (isStandalone) navigator.storage?.persist?.().catch(() => {})

@@ -35,6 +35,7 @@ export function defaultSettings(): Settings {
     calibration: null,
     stepGoal: 7000,
     safetyDismissed: false,
+    installHintDismissed: false,
   }
 }
 
@@ -108,6 +109,7 @@ function sanitizeSettings(raw: unknown): Settings {
     calibration: nullableNum(raw.calibration, 0.85, 1.15),
     stepGoal: Math.round(num(raw.stepGoal, d.stepGoal, 0, 30000)),
     safetyDismissed: bool(raw.safetyDismissed, d.safetyDismissed),
+    installHintDismissed: bool(raw.installHintDismissed, d.installHintDismissed),
   }
 }
 

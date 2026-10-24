@@ -11,6 +11,18 @@ data lives in the browser's `localStorage`, with JSON export and import in Setti
 the original brief that was corrected, every claim that was reworded, and why, with
 references.
 
+## On a phone
+
+Open the live link, then **iPhone:** Safari → Share → Add to Home Screen; **Android:**
+browser menu ⋮ → Install app. It opens full screen, with its own icon, and works with no
+signal. `public/sw.js` caches the app on first load: page loads go network-first, and the
+content-hashed assets come from the cache. A dismissible card on the Dashboard says this on
+phones that haven't installed it yet.
+
+On iPhone, the home-screen app has its own storage, separate from Safari. Install it before
+logging anything, or export from Safari and import into the installed app. The PNG icons in
+`public/` (180, 192, 512 and a maskable 512) are rendered from `favicon.svg`'s geometry.
+
 ## Run it
 
 ```bash

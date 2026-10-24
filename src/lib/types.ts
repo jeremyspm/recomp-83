@@ -39,6 +39,8 @@ export interface Settings {
   calibration: number | null
   stepGoal: number
   safetyDismissed: boolean
+  /** The "add it to your home screen" card on phones. */
+  installHintDismissed: boolean
 }
 
 export interface WeighIn {
